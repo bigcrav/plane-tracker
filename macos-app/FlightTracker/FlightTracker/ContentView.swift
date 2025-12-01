@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var store: FlightStore
-    @State private var serverText: String = "http://localhost:8080"
+    @State private var serverText: String = FlightStore.defaultServerURL.absoluteString
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {

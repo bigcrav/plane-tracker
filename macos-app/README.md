@@ -15,8 +15,8 @@ This folder holds a lightweight SwiftUI desktop app and a WidgetKit extension th
 4. In the widget target, add an app group or shared container if you want to persist the server URL; by default, it uses `UserDefaults.standard` and falls back to `http://localhost:8080`.
 
 ## Configuring server URL
-- App window: edit the server URL text field and click “Set & Refresh”.
-- Widget: set a `UserDefaults` string key `server_url` under the widget’s suite (or app group). The sample code reads `UserDefaults.standard` for simplicity.
+- Defaults to `http://127.0.0.1:8080` (localhost). Edit the text field in the app and click “Set & Refresh” to point at a different server.
+- Widget (if added): set a `UserDefaults` string key `server_url` under the widget’s suite (or app group). The sample code reads `UserDefaults.standard` for simplicity.
 
 ## What it expects on the server
 - `GET /closest/json` -> JSON array of flight objects

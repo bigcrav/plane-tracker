@@ -12,11 +12,13 @@ struct FlightEntry: Identifiable, Decodable {
 }
 
 final class FlightStore: ObservableObject {
+    static let defaultServerURL = URL(string: "http://127.0.0.1:8080")!
+
     @Published var closest: [FlightEntry] = []
     @Published var farthest: [FlightEntry] = []
     @Published var isLoading = false
     @Published var error: String?
-    @Published var serverURL: URL = URL(string: "http://localhost:8080")!
+    @Published var serverURL: URL = FlightStore.defaultServerURL
 
     private var session: URLSession = .shared
 
