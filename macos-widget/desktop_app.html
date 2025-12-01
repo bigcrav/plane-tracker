@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plane Tracker Desktop</title>
+  <style>
+    body { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; margin: 24px; color: #0f172a; background: linear-gradient(135deg,#f8fafc,#e2e8f0); }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    h1 { margin: 0; font-size: 24px; }
+    .server { font-size: 14px; color: #334155; }
+    .cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 6px 24px rgba(15,23,42,0.1); }
+    .card h2 { margin: 0 0 8px 0; font-size: 18px; }
+    .item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
+    .item:last-child { border-bottom: none; }
+    .label { font-weight: 600; color: #0f172a; }
+    .meta { color: #475569; font-size: 14px; }
+    .links { margin-top: 10px; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button { background:#0f172a;color:#fff;border:none;border-radius:8px;padding:8px 12px;cursor:pointer; }
+    button:hover { background:#1e293b; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Plane Tracker</h1>
+      <div class="server">Server: <span id="server-label"></span></div>
+    </div>
+    <div>
+      <button onclick="refresh()">Refresh</button>
+    </div>
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <h2>Closest flights</h2>
+      <div id="closest"></div>
+      <div class="links"><a id="closest-link" target="_blank">Open map</a></div>
+    </div>
+    <div class="card">
+      <h2>Farthest flights</h2>
+      <div id="farthest"></div>
+      <div class="links"><a id="farthest-link" target="_blank">Open map</a></div>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const BASE = (params.get("server") || "http://localhost:8080").replace(/\/$/, "");
+    document.getElementById("server-label").textContent = BASE;
+    document.getElementById("closest-link").href = `${BASE}/closest`;
+    document.getElementById("farthest-link").href = `${BASE}/farthest`;
+
+    const closestEl = document.getElementById("closest");
+    const farthestEl = document.getElementById("farthest");
+
+    function render(el, list) {
+      if (!list.length) {
+        el.innerHTML = '<div class="meta">No data yet</div>';
+        return;
+      }
+      el.innerHTML = list.map(item => {
+        const callsign = item.callsign || "UNKNOWN";
+        const origin = item.origin || "UNK";
+        const dest = item.destination || "UNK";
+        const dist = (item.distance || 0).toFixed(1);
+        const dir = item.direction || "";
+        return `
+          <div class="item">
+            <div>
+              <div class="label">${callsign}</div>
+              <div class="meta">${origin} → ${dest}</div>
+            </div>
+            <div class="meta">${dist} ${dir}</div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    async function fetchJson(path) {
+      const url = `${BASE}${path}`;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(res.statusText);
+        return await res.json();
+      } catch (e) {
+        return [];
+      }
+    }
+
+    async function refresh() {
+      const [c, f] = await Promise.all([
+        fetchJson("/closest/json"),
+        fetchJson("/farthest/json")
+      ]);
+      render(closestEl, c);
+      render(farthestEl, f);
+    }
+
+    refresh();
+  </script>
+</body>
+</html>

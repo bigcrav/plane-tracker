@@ -1,0 +1,8 @@
+FlightRadarAPI
+requests
+folium
+flask
+pillow
+beautifulsoup4
+pytz
+selenium
