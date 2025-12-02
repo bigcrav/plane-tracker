@@ -30,8 +30,6 @@ Each time a flight is detected:
 - Generates **interactive maps** for both closest and farthest flights  
 - Maps and log files can be viewed via your Pi’s local IP at `http://<Pi_IP>:8080` (The local IP address of your flight tracker ie 192.168.x.x:8080 etc) 
 
-This setup lets you stay updated without watching the clock, in addition to receiving email summaries with distance and map information.
-
 If you would like to manually view the log files they are located here
 
 ```
@@ -60,14 +58,6 @@ chmod +x /home/path/its-a-plane-python/its-a-plane.py
 # Project Overview
 
 This project is based on [Colin Waddell's work](https://github.com/ColinWaddell/its-a-plane-python), with some additional features I’ve added.
-
-## Clock Screen:
-- Displays time, date, current temperature, and a 3-day forecast.
-- The current temperature color is based on the current humidity level on a gradient of white-blue.
-- Time changes color at sunrise and sunset.
-- The date shows moon phases with a purple-to-white gradient. It gradually becomes white on the right until the full moon, then fades white on the left as the moon wanes.
-- The display dims at predefined times, set in the config file.
-- You can switch between 12hr/24hr time and choose imperial or metric units.
 
 ## Flight Tracker Screen:
 - Displays the origin and destination airport codes, with distances to both airports.
@@ -158,7 +148,7 @@ When using the Imager make sure these settings are selected to enable SSH and ma
 ![edit](https://github.com/user-attachments/assets/3141a507-6746-4741-84ba-2c5a6f319004)
 ![wifi](https://github.com/user-attachments/assets/0669de7a-cb9c-4c2a-9129-8b044c088f9f)
 
-Make sure you select the correct timezone since that is what is displayed on the clock. You can always change it later.
+Make sure you select the correct timezone here; you can always change it later.
 ![ssh](https://github.com/user-attachments/assets/67d6fa8f-5ae3-4bf9-9f47-fbf78017ad78)
 
 ### 2. Connect via SSH

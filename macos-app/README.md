@@ -6,13 +6,13 @@ This folder holds a lightweight SwiftUI desktop app and a WidgetKit extension th
 - `PlaneTrackerApp.swift` – app entry point
 - `ContentView.swift` – main window UI (closest/farthest lists, configurable server URL)
 - `Models.swift` – data model + fetcher
-- `Widget/PlaneTrackerWidget.swift` – WidgetKit extension showing glanceable lists
+- `PlaneTrackerWidget/PlaneTrackerWidget.swift` – WidgetKit extension showing glanceable lists
 
 ## How to open/build
 1. Open the repo folder in Xcode (File > Open > select the repo). Create a new macOS app project if prompted and drop these files in, or add them to an existing project/Workspace.
 2. Target macOS 13+ (for `MenuBarExtra` not needed here, but SwiftUI/WidgetKit baseline).
-3. Ensure both the app target and the widget extension target include the relevant files (app: `PlaneTrackerApp.swift`, `ContentView.swift`, `Models.swift`; widget: `Widget/PlaneTrackerWidget.swift` plus shared models).
-4. In the widget target, add an app group or shared container if you want to persist the server URL; by default, it uses `UserDefaults.standard` and falls back to `http://localhost:8080`.
+3. The repo now includes a `PlaneTrackerWidget` extension target (.appex) that builds alongside the app and is embedded automatically.
+4. In the widget target, add an app group or shared container if you want to persist the server URL; by default, it uses `UserDefaults.standard` and falls back to `http://127.0.0.1:8080`.
 
 ## Configuring server URL
 - Defaults to `http://127.0.0.1:8080` (localhost). Edit the text field in the app and click “Set & Refresh” to point at a different server.

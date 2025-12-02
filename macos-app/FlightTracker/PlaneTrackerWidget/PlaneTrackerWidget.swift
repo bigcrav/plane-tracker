@@ -1,5 +1,21 @@
 import WidgetKit
 import SwiftUI
+import Foundation
+
+struct FlightEntry: Identifiable, Decodable {
+    let id = UUID()
+    let callsign: String?
+    let origin: String?
+    let destination: String?
+    let distance: Double?
+    let direction: String?
+    let airline: String?
+    let plane: String?
+
+    private enum CodingKeys: String, CodingKey {
+        case callsign, origin, destination, distance, direction, airline, plane
+    }
+}
 
 struct FlightSnapshot: TimelineEntry {
     let date: Date
@@ -10,7 +26,7 @@ struct FlightSnapshot: TimelineEntry {
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> FlightSnapshot {
-        FlightSnapshot(date: Date(), closest: sampleFlights(), farthest: sampleFlights(), server: URL(string: "http://localhost:8080")!)
+        FlightSnapshot(date: Date(), closest: sampleFlights(), farthest: sampleFlights(), server: URL(string: "http://127.0.0.1:8080")!)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (FlightSnapshot) -> Void) {
@@ -19,7 +35,7 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<FlightSnapshot>) -> Void) {
         Task {
-            let server = URL(string: UserDefaults.standard.string(forKey: "server_url") ?? "http://localhost:8080")!
+            let server = URL(string: UserDefaults.standard.string(forKey: "server_url") ?? "http://127.0.0.1:8080")!
             let closest = await fetch(path: "closest/json", server: server)
             let farthest = await fetch(path: "farthest/json", server: server)
             let entry = FlightSnapshot(date: Date(), closest: closest, farthest: farthest, server: server)

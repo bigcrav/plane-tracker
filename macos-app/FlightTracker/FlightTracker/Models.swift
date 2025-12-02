@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 
 struct FlightEntry: Identifiable, Decodable {
     let id = UUID()
