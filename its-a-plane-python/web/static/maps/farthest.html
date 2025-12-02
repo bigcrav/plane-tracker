@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_792e36d9bdcfc481228f0cd5f6d937b2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_792e36d9bdcfc481228f0cd5f6d937b2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_792e36d9bdcfc481228f0cd5f6d937b2 = L.map(
+                "map_792e36d9bdcfc481228f0cd5f6d937b2",
+                {
+                    center: [39.266743, -81.561516],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ede2fa60a4bbe966c8eff8556b75ab87 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ede2fa60a4bbe966c8eff8556b75ab87.addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+            var marker_51b5217c7a5cb3b8fed12886743b7648 = L.marker(
+                [39.266743, -81.561516],
+                {
+}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+            var icon_58bf86170cfa47c149f1f084cb6f6277 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8304328b3054c281db0f34ec65755d71 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3bccce39235273095dd2b1eccc72c5e6 = $(`<div id="html_3bccce39235273095dd2b1eccc72c5e6" style="width: 100.0%; height: 100.0%;">Home</div>`)[0];
+                popup_8304328b3054c281db0f34ec65755d71.setContent(html_3bccce39235273095dd2b1eccc72c5e6);
+            
+        
+
+        marker_51b5217c7a5cb3b8fed12886743b7648.bindPopup(popup_8304328b3054c281db0f34ec65755d71)
+        ;
+
+        
+    
+    
+                marker_51b5217c7a5cb3b8fed12886743b7648.setIcon(icon_58bf86170cfa47c149f1f084cb6f6277);
+            
+    
+            var marker_5621bf592850b0bff7da7ae5417d578d = L.marker(
+                [39.1916, -81.4465],
+                {
+}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+            var icon_86ad307bc25a503febe8d0cd19bc77f7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_944bed6e01590c2b30301ffbd631f89c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70a48e30d24e8fdcb676573e79b92ec5 = $(`<div id="html_70a48e30d24e8fdcb676573e79b92ec5" style="width: 100.0%; height: 100.0%;">         <div style="font-size:14px; font-family:Arial; line-height:1.4; white-space:nowrap;">             <b>Timestamp:</b> Dec 02 2025, 08:35:07 AM<br>             <b>Flight:</b> WJA2756<br>             <b>From:</b> YYZ<br>             <b>To:</b> LIR<br>             <b>Plane:</b> B38M<br>             <b>Distance to Home:</b> 8.05 mi<br>             <b>Distance Origin:</b> 324.15 mi<br>             <b>Distance Destination:</b> 1992.05 mi         </div>         </div>`)[0];
+                popup_944bed6e01590c2b30301ffbd631f89c.setContent(html_70a48e30d24e8fdcb676573e79b92ec5);
+            
+        
+
+        marker_5621bf592850b0bff7da7ae5417d578d.bindPopup(popup_944bed6e01590c2b30301ffbd631f89c)
+        ;
+
+        
+    
+    
+                marker_5621bf592850b0bff7da7ae5417d578d.setIcon(icon_86ad307bc25a503febe8d0cd19bc77f7);
+            
+    
+            var poly_line_af8f71482cea0d888bf70d98748a8e06 = L.polyline(
+                [[43.680634, -79.627007], [39.1916, -81.4465], [10.59301, -85.545502]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+            var circle_marker_0fb87c04bbcc9af02a9a17d3cdd44a7d = L.circleMarker(
+                [43.680634, -79.627007],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+        var popup_f6893c866eb6fa261d14d9f5f63b006a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_656bcc61b68fb82c439cd88b562829f1 = $(`<div id="html_656bcc61b68fb82c439cd88b562829f1" style="width: 100.0%; height: 100.0%;">YYZ Airport Distance: 324.15 mi</div>`)[0];
+                popup_f6893c866eb6fa261d14d9f5f63b006a.setContent(html_656bcc61b68fb82c439cd88b562829f1);
+            
+        
+
+        circle_marker_0fb87c04bbcc9af02a9a17d3cdd44a7d.bindPopup(popup_f6893c866eb6fa261d14d9f5f63b006a)
+        ;
+
+        
+    
+    
+            var circle_marker_0688d4f759b51a64cf2ac4723ea9a967 = L.circleMarker(
+                [10.59301, -85.545502],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+        var popup_67193b3d78dfede089c7140a1f9b03d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e38ee2bc9c632b32b77d1ec9002b4128 = $(`<div id="html_e38ee2bc9c632b32b77d1ec9002b4128" style="width: 100.0%; height: 100.0%;">LIR Airport Distance: 1992.05 mi</div>`)[0];
+                popup_67193b3d78dfede089c7140a1f9b03d2.setContent(html_e38ee2bc9c632b32b77d1ec9002b4128);
+            
+        
+
+        circle_marker_0688d4f759b51a64cf2ac4723ea9a967.bindPopup(popup_67193b3d78dfede089c7140a1f9b03d2)
+        ;
+
+        
+    
+    
+            var marker_af71c6177f6c2817a2ece4c5000bde0b = L.marker(
+                [39.4799, -81.2957],
+                {
+}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+            var icon_2a604e630218655c64e66be7fcb777af = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9054b651ef5facbb3f5e625223105f34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f4a46c209951746c65463c1f07e82060 = $(`<div id="html_f4a46c209951746c65463c1f07e82060" style="width: 100.0%; height: 100.0%;">         <div style="font-size:14px; font-family:Arial; line-height:1.4; white-space:nowrap;">             <b>Timestamp:</b> Dec 02 2025, 08:38:20 AM<br>             <b>Flight:</b> JBU865<br>             <b>From:</b> BUF<br>             <b>To:</b> FLL<br>             <b>Plane:</b> A320<br>             <b>Distance to Home:</b> 20.46 mi<br>             <b>Distance Origin:</b> 273.75 mi<br>             <b>Distance Destination:</b> 928.72 mi         </div>         </div>`)[0];
+                popup_9054b651ef5facbb3f5e625223105f34.setContent(html_f4a46c209951746c65463c1f07e82060);
+            
+        
+
+        marker_af71c6177f6c2817a2ece4c5000bde0b.bindPopup(popup_9054b651ef5facbb3f5e625223105f34)
+        ;
+
+        
+    
+    
+                marker_af71c6177f6c2817a2ece4c5000bde0b.setIcon(icon_2a604e630218655c64e66be7fcb777af);
+            
+    
+            var poly_line_293941225201367a2c4d51398d3085b4 = L.polyline(
+                [[42.940331, -78.729744], [39.4799, -81.2957], [26.07258, -80.152702]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+            var circle_marker_997b64fdbd9aa2b2a0b91558b97b742c = L.circleMarker(
+                [42.940331, -78.729744],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+        var popup_d4cf4d739d416795b516b97fd195d88b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fcf2c8398a46e8ef8b6ab7113be3c9ff = $(`<div id="html_fcf2c8398a46e8ef8b6ab7113be3c9ff" style="width: 100.0%; height: 100.0%;">BUF Airport Distance: 273.75 mi</div>`)[0];
+                popup_d4cf4d739d416795b516b97fd195d88b.setContent(html_fcf2c8398a46e8ef8b6ab7113be3c9ff);
+            
+        
+
+        circle_marker_997b64fdbd9aa2b2a0b91558b97b742c.bindPopup(popup_d4cf4d739d416795b516b97fd195d88b)
+        ;
+
+        
+    
+    
+            var circle_marker_5de0f839f2d6353f5617a6ba4eb90687 = L.circleMarker(
+                [26.07258, -80.152702],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+        var popup_b93996fbee7a887759c1cb62f2256de7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a75763bb009385f05b0c3e91fe2c33ba = $(`<div id="html_a75763bb009385f05b0c3e91fe2c33ba" style="width: 100.0%; height: 100.0%;">FLL Airport Distance: 928.72 mi</div>`)[0];
+                popup_b93996fbee7a887759c1cb62f2256de7.setContent(html_a75763bb009385f05b0c3e91fe2c33ba);
+            
+        
+
+        circle_marker_5de0f839f2d6353f5617a6ba4eb90687.bindPopup(popup_b93996fbee7a887759c1cb62f2256de7)
+        ;
+
+        
+    
+    
+            var marker_4980c00e8d1ad5072a1eb1b6346237f1 = L.marker(
+                [39.3647, -81.5943],
+                {
+}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+            var icon_93f49d1127448ca7def97bfaa30c4e3e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4127342f62ce8fe17339ab65cd4e563 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c35b5dd1d79875a136dad3c1fc9b94b4 = $(`<div id="html_c35b5dd1d79875a136dad3c1fc9b94b4" style="width: 100.0%; height: 100.0%;">         <div style="font-size:14px; font-family:Arial; line-height:1.4; white-space:nowrap;">             <b>Timestamp:</b> Dec 02 2025, 08:28:54 AM<br>             <b>Flight:</b> RPA4794<br>             <b>From:</b> ROA<br>             <b>To:</b> ORD<br>             <b>Plane:</b> E75L<br>             <b>Distance to Home:</b> 6.99 mi<br>             <b>Distance Origin:</b> 166.45 mi<br>             <b>Distance Destination:</b> 376.69 mi         </div>         </div>`)[0];
+                popup_c4127342f62ce8fe17339ab65cd4e563.setContent(html_c35b5dd1d79875a136dad3c1fc9b94b4);
+            
+        
+
+        marker_4980c00e8d1ad5072a1eb1b6346237f1.bindPopup(popup_c4127342f62ce8fe17339ab65cd4e563)
+        ;
+
+        
+    
+    
+                marker_4980c00e8d1ad5072a1eb1b6346237f1.setIcon(icon_93f49d1127448ca7def97bfaa30c4e3e);
+            
+    
+            var poly_line_5673b73bcb51fc0a3801b4ae9828a240 = L.polyline(
+                [[37.32, -79.970001], [39.3647, -81.5943], [41.978142, -87.9058]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.9, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+            var circle_marker_3f9d3041b0ffd4c5dfe46b37cfc9b529 = L.circleMarker(
+                [37.32, -79.970001],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+        var popup_d9dd78148b3c8d7f27949f83413bd2b6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e2dbf6fde466424b4a629111fb02a98c = $(`<div id="html_e2dbf6fde466424b4a629111fb02a98c" style="width: 100.0%; height: 100.0%;">ROA Airport Distance: 166.45 mi</div>`)[0];
+                popup_d9dd78148b3c8d7f27949f83413bd2b6.setContent(html_e2dbf6fde466424b4a629111fb02a98c);
+            
+        
+
+        circle_marker_3f9d3041b0ffd4c5dfe46b37cfc9b529.bindPopup(popup_d9dd78148b3c8d7f27949f83413bd2b6)
+        ;
+
+        
+    
+    
+            var circle_marker_38450b50c34441fd46c2c9fd3b617307 = L.circleMarker(
+                [41.978142, -87.9058],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_792e36d9bdcfc481228f0cd5f6d937b2);
+        
+    
+        var popup_a41aa76cdb9b871931c2cf038bfdd0bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c27616cdf65a93b90eed4f3a6b51a75e = $(`<div id="html_c27616cdf65a93b90eed4f3a6b51a75e" style="width: 100.0%; height: 100.0%;">ORD Airport Distance: 376.69 mi</div>`)[0];
+                popup_a41aa76cdb9b871931c2cf038bfdd0bd.setContent(html_c27616cdf65a93b90eed4f3a6b51a75e);
+            
+        
+
+        circle_marker_38450b50c34441fd46c2c9fd3b617307.bindPopup(popup_a41aa76cdb9b871931c2cf038bfdd0bd)
+        ;
+
+        
+    
+    
+            map_792e36d9bdcfc481228f0cd5f6d937b2.fitBounds(
+                [[39.266743, -81.561516], [39.1916, -81.4465], [43.680634, -79.627007], [10.59301, -85.545502], [39.4799, -81.2957], [42.940331, -78.729744], [26.07258, -80.152702], [39.3647, -81.5943], [37.32, -79.970001], [41.978142, -87.9058]],
+                {}
+            );
+        
+</script>
+</html>

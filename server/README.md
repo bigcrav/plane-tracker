@@ -14,6 +14,7 @@ python server/run_server.py --interval 180 --host 0.0.0.0 --port 8080
 
 Endpoints (from clients):
 - `http://<server>:8080/closest/json` and `/farthest/json` for data
+- `http://<server>:8080/history/json` for the rolling history feed
 - `http://<server>:8080/closest` and `/farthest` for interactive maps
 - `http://<server>:8080/maps/<filename>` for static map files
 

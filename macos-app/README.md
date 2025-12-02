@@ -4,7 +4,7 @@ This folder holds a lightweight SwiftUI desktop app and a WidgetKit extension th
 
 ## Structure
 - `PlaneTrackerApp.swift` – app entry point
-- `ContentView.swift` – main window UI (closest/farthest lists, configurable server URL)
+- `ContentView.swift` – main window UI (closest/farthest lists, recent history, configurable server URL)
 - `Models.swift` – data model + fetcher
 - `PlaneTrackerWidget/PlaneTrackerWidget.swift` – WidgetKit extension showing glanceable lists
 
@@ -21,6 +21,7 @@ This folder holds a lightweight SwiftUI desktop app and a WidgetKit extension th
 ## What it expects on the server
 - `GET /closest/json` -> JSON array of flight objects
 - `GET /farthest/json` -> JSON array of flight objects
+- `GET /history/json` -> JSON array of recent flight history (rolling window)
 - (Optional) `/closest` and `/farthest` for map links you can open from the app
 
 ## Notes

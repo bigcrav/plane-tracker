@@ -20,42 +20,8 @@ def format_dist(v):
     return f"{v:.5f} miles"
 
 def _send(subject: str, body: str, attachment_path: Optional[str] = None):
-    """Low-level email sender (internal). Supports optional attachment."""
-    if not EMAIL.strip():
-        return
-
-    sender = "flight.tracker.alerts2025@gmail.com"
-    password = "wlst ujvs bcvu uhdr"
-    receiver = EMAIL
-
-    if attachment_path and os.path.isfile(attachment_path):
-        msg = MIMEMultipart()
-        msg.attach(MIMEText(body, "plain"))
-
-        # Attach the PNG map
-        with open(attachment_path, "rb") as f:
-            part = MIMEBase("application", "octet-stream")
-            part.set_payload(f.read())
-        encoders.encode_base64(part)
-        part.add_header(
-            "Content-Disposition",
-            f'attachment; filename="{os.path.basename(attachment_path)}"',
-        )
-        msg.attach(part)
-    else:
-        msg = MIMEText(body)
-
-    msg["Subject"] = subject
-    msg["From"] = sender
-    msg["To"] = receiver
-
-    try:
-        with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
-            smtp.starttls()
-            smtp.login(sender, password)
-            smtp.send_message(msg)
-    except Exception as e:
-        print(f"⚠️ Failed to send email: {e}")
+    """Email delivery disabled (stub)."""
+    return
 
 def send_flight_summary(subject: str, entry: dict, reason: Optional[str] = None, map_url: Optional[str] = None):
     hostname = socket.gethostname()

@@ -28,6 +28,11 @@ try:
 except (ImportError, ModuleNotFoundError, NameError):
     MIN_ALTITUDE = 0
 
+try:
+    from config import MAX_HISTORY
+except (ImportError, ModuleNotFoundError, NameError):
+    MAX_HISTORY = 200
+
 
 try:
     from config import ZONE_HOME, LOCATION_HOME
@@ -50,6 +55,7 @@ BLANK_FIELDS = ["", "N/A", "NONE"]
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 LOG_FILE = os.path.join(BASE_DIR, "close.txt")
 LOG_FILE_FARTHEST = os.path.join(BASE_DIR, "farthest.txt")
+LOG_FILE_HISTORY = os.path.join(BASE_DIR, "history.txt")
 
 # Utility Functions
 
@@ -236,6 +242,21 @@ def log_farthest_flight(entry: dict):
         print("Failed to log farthest flight:", e)
 
 
+def log_history_entry(entry: dict):
+    """Append a rolling history of recently processed flights."""
+    try:
+        lst = safe_load_json(LOG_FILE_HISTORY)
+        entry_copy = dict(entry)
+        entry_copy["timestamp"] = entry_copy.get("timestamp") or email_alerts.get_timestamp()
+        entry_copy["history_type"] = entry_copy.get("history_type") or "flight"
+        lst.append(entry_copy)
+        if len(lst) > MAX_HISTORY:
+            lst = lst[-MAX_HISTORY:]
+        safe_write_json(LOG_FILE_HISTORY, lst)
+    except Exception as e:
+        print("Failed to log history:", e)
+
+
 # Overhead Class
 
 class Overhead:
@@ -311,6 +332,7 @@ class Overhead:
                         dist_o = distance_to_point(f, origin_lat, origin_lon) if origin_lat else 0
                         dist_d = distance_to_point(f, dest_lat, dest_lon) if dest_lat else 0
 
+                        timestamp = email_alerts.get_timestamp()
                         entry = {
                             "airline": airline,
                             "plane": plane,
@@ -334,6 +356,7 @@ class Overhead:
                             "vertical_speed": f.vertical_speed,
                             "callsign": callsign,
 
+                            "timestamp": timestamp,
                             "distance_origin": dist_o,
                             "distance_destination": dist_d,
                             "distance": distance_from_flight_to_home(f),
@@ -345,6 +368,7 @@ class Overhead:
                         # Log flights
                         log_flight_data(entry)
                         log_farthest_flight(entry)
+                        log_history_entry(entry)
 
                         break
 

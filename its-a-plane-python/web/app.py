@@ -16,6 +16,7 @@ app = Flask(
 # JSON flight logs (stored outside /web)
 CLOSEST_FILE = os.path.join(BASE_DIR, "close.txt")
 FARTHEST_FILE = os.path.join(BASE_DIR, "farthest.txt")
+HISTORY_FILE = os.path.join(BASE_DIR, "history.txt")
 
 
 def load_json(path, default):
@@ -40,6 +41,11 @@ def closest_json():
 @app.get("/farthest/json")
 def farthest_json():
     return jsonify(load_json(FARTHEST_FILE, []))
+
+
+@app.get("/history/json")
+def history_json():
+    return jsonify(load_json(HISTORY_FILE, []))
 
 
 @app.get("/closest")

@@ -11,6 +11,7 @@ struct ContentView: View {
                 FlightList(title: "Closest flights", flights: store.closest)
                 FlightList(title: "Farthest flights", flights: store.farthest)
             }
+            HistoryList(entries: store.history)
             Spacer()
         }
         .padding(20)
@@ -90,5 +91,46 @@ struct FlightList: View {
             }
         }
         .frame(minWidth: 240)
+    }
+}
+
+struct HistoryList: View {
+    let entries: [FlightEntry]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Recent history").font(.headline)
+            if entries.isEmpty {
+                Text("No history yet").foregroundColor(.secondary)
+            } else {
+                List(entries) { entry in
+                    VStack(alignment: .leading, spacing: 2) {
+                        HStack {
+                            Text(entry.callsign ?? "UNKNOWN")
+                                .fontWeight(.semibold)
+                            Spacer()
+                            if let ts = entry.timestamp {
+                                Text(ts).foregroundColor(.secondary)
+                            }
+                        }
+                        Text("\(entry.origin ?? "UNK") → \(entry.destination ?? "UNK")")
+                            .foregroundColor(.secondary)
+                        HStack(spacing: 8) {
+                            if let d = entry.distance {
+                                Text(String(format: "%.1f", d))
+                            }
+                            Text(entry.direction ?? "")
+                            Spacer()
+                            Text(entry.airline ?? "")
+                                .foregroundColor(.secondary)
+                        }
+                        .font(.footnote)
+                    }
+                    .padding(.vertical, 4)
+                }
+                .listStyle(.inset)
+                .frame(minHeight: 200)
+            }
+        }
     }
 }

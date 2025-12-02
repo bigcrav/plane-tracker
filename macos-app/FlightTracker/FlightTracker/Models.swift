@@ -10,6 +10,7 @@ struct FlightEntry: Identifiable, Decodable {
     let direction: String?
     let airline: String?
     let plane: String?
+    let timestamp: String?
 }
 
 final class FlightStore: ObservableObject {
@@ -17,6 +18,7 @@ final class FlightStore: ObservableObject {
 
     @Published var closest: [FlightEntry] = []
     @Published var farthest: [FlightEntry] = []
+    @Published var history: [FlightEntry] = []
     @Published var isLoading = false
     @Published var error: String?
     @Published var serverURL: URL = FlightStore.defaultServerURL
@@ -51,6 +53,7 @@ final class FlightStore: ObservableObject {
 
         fetch(path: "closest/json") { self.closest = $0 }
         fetch(path: "farthest/json") { self.farthest = $0 }
+        fetch(path: "history/json") { self.history = Array($0.reversed()) }
 
         group.notify(queue: .main) {
             self.isLoading = false
