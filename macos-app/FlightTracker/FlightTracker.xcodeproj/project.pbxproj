@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6A1F0A182F00A1B200A1B200 /* PlaneTrackerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F0A112F00A1B200A1B200 /* PlaneTrackerWidget.swift */; };
+		6A1F0A192F00A1B200A1B200 /* PlaneTrackerWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6A1F0A142F00A1B200A1B200 /* PlaneTrackerWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4DF79EF12EDE3EA700709225 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,20 +35,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXBuildFile section */
-		6A1F0A182F00A1B200A1B200 /* PlaneTrackerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F0A112F00A1B200A1B200 /* PlaneTrackerWidget.swift */; };
-		6A1F0A192F00A1B200A1B200 /* PlaneTrackerWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6A1F0A142F00A1B200A1B200 /* PlaneTrackerWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		4DF79EE32EDE3EA500709225 /* FlightTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DF79EF02EDE3EA700709225 /* FlightTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DF79EFA2EDE3EA700709225 /* FlightTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A1F0A112F00A1B200A1B200 /* PlaneTrackerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneTrackerWidget.swift; sourceTree = "<group>"; };
-		6A1F0A122F00A1B200A1B200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A1F0A142F00A1B200A1B200 /* PlaneTrackerWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PlaneTrackerWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		6A1F0A1A2F00A1B200A1B200 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -57,6 +48,15 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4DF79EE32EDE3EA500709225 /* FlightTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF79EF02EDE3EA700709225 /* FlightTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DF79EFA2EDE3EA700709225 /* FlightTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlightTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A1F0A112F00A1B200A1B200 /* PlaneTrackerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneTrackerWidget.swift; sourceTree = "<group>"; };
+		6A1F0A122F00A1B200A1B200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A1F0A142F00A1B200A1B200 /* PlaneTrackerWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PlaneTrackerWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4DF79EE52EDE3EA500709225 /* FlightTracker */ = {
@@ -166,28 +166,6 @@
 			productReference = 4DF79EE32EDE3EA500709225 /* FlightTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6A1F0A132F00A1B200A1B200 /* PlaneTrackerWidget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6A1F0A1B2F00A1B200A1B200 /* Build configuration list for PBXNativeTarget "PlaneTrackerWidget" */;
-			buildPhases = (
-				6A1F0A152F00A1B200A1B200 /* Sources */,
-				6A1F0A172F00A1B200A1B200 /* Frameworks */,
-				6A1F0A162F00A1B200A1B200 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				6A1F0A102F00A1B200A1B200 /* PlaneTrackerWidget */,
-			);
-			name = PlaneTrackerWidget;
-			packageProductDependencies = (
-			);
-			productName = PlaneTrackerWidget;
-			productReference = 6A1F0A142F00A1B200A1B200 /* PlaneTrackerWidget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		4DF79EEF2EDE3EA700709225 /* FlightTrackerTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DF79F072EDE3EA700709225 /* Build configuration list for PBXNativeTarget "FlightTrackerTests" */;
@@ -233,6 +211,28 @@
 			productName = FlightTrackerUITests;
 			productReference = 4DF79EFA2EDE3EA700709225 /* FlightTrackerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		6A1F0A132F00A1B200A1B200 /* PlaneTrackerWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A1F0A1B2F00A1B200A1B200 /* Build configuration list for PBXNativeTarget "PlaneTrackerWidget" */;
+			buildPhases = (
+				6A1F0A152F00A1B200A1B200 /* Sources */,
+				6A1F0A172F00A1B200A1B200 /* Frameworks */,
+				6A1F0A162F00A1B200A1B200 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6A1F0A102F00A1B200A1B200 /* PlaneTrackerWidget */,
+			);
+			name = PlaneTrackerWidget;
+			packageProductDependencies = (
+			);
+			productName = PlaneTrackerWidget;
+			productReference = 6A1F0A142F00A1B200A1B200 /* PlaneTrackerWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -494,6 +494,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
+				EXCLUDED_SOURCE_FILE_NAMES = PlaneTrackerWidget.swift;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -501,7 +502,6 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				EXCLUDED_SOURCE_FILE_NAMES = PlaneTrackerWidget.swift;
 				PRODUCT_BUNDLE_IDENTIFIER = CravenInc.FlightTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -527,6 +527,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
+				EXCLUDED_SOURCE_FILE_NAMES = PlaneTrackerWidget.swift;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -534,7 +535,6 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				EXCLUDED_SOURCE_FILE_NAMES = PlaneTrackerWidget.swift;
 				PRODUCT_BUNDLE_IDENTIFIER = CravenInc.FlightTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;

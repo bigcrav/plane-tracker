@@ -14,8 +14,9 @@ This folder holds a lightweight SwiftUI desktop app and a WidgetKit extension th
 3. The repo now includes a `PlaneTrackerWidget` extension target (.appex) that builds alongside the app and is embedded automatically.
 4. In the widget target, add an app group or shared container if you want to persist the server URL; by default, it uses `UserDefaults.standard` and falls back to `http://127.0.0.1:8080`.
 
-## Configuring server URL
-- Defaults to `http://127.0.0.1:8080` (localhost). Edit the text field in the app and click “Set & Refresh” to point at a different server.
+## Configuring data sources
+- The macOS app pulls the closest flights directly from FlightRadar24 (no server hop) using a bounding box derived from your home location and radius. Defaults live in `FlightTracker/Config.plist` (`HomeLatitude`, `HomeLongitude`, `RadiusMiles`), defaulting to Parkersburg, WV with a 10 mile radius, and can be adjusted in-app via the Home Settings card.
+- Farthest/history panels still read from the server endpoints at `ServerURL` (in the same plist) to stay compatible with the existing Python service.
 - Widget (if added): set a `UserDefaults` string key `server_url` under the widget’s suite (or app group). The sample code reads `UserDefaults.standard` for simplicity.
 
 ## What it expects on the server

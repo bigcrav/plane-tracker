@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ServerURL</key>
+	<string>http://127.0.0.1:8080</string>
+	<key>HomeLatitude</key>
+	<real>39.266743</real>
+	<key>HomeLongitude</key>
+	<real>-81.561516</real>
+	<key>RadiusMiles</key>
+	<real>10</real>
+</dict>
+</plist>
