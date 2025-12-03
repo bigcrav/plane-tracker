@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import CoreLocation
 
 struct FlightEntry: Identifiable, Decodable {
     let id = UUID()
@@ -11,6 +12,14 @@ struct FlightEntry: Identifiable, Decodable {
     let airline: String?
     let plane: String?
     let timestamp: String?
+    let latitude: Double?
+    let longitude: Double?
+    let altitude: Double?
+
+    var coordinate: CLLocationCoordinate2D? {
+        guard let latitude, let longitude else { return nil }
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }
 
 enum AppConfiguration {
@@ -197,7 +206,10 @@ private struct FlightRadarFetcher {
                 direction: direction,
                 airline: airline,
                 plane: plane,
-                timestamp: DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short)
+                timestamp: DateFormatter.localizedString(from: Date(), dateStyle: .short, timeStyle: .short),
+                latitude: lat,
+                longitude: lon,
+                altitude: arr.value(Double.self, at: 4)
             )
             results.append(entry)
         }
@@ -242,4 +254,40 @@ private extension Array where Element == Any {
 private extension Double {
     var radians: Double { self * .pi / 180 }
     var degrees: Double { self * 180 / .pi }
+}
+
+final class LocationProvider: NSObject, ObservableObject, CLLocationManagerDelegate {
+    @Published var currentLocation: CLLocation?
+    @Published var authorizationStatus: CLAuthorizationStatus = .notDetermined
+
+    private let manager = CLLocationManager()
+
+    override init() {
+        super.init()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    }
+
+    func requestLocation() {
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        authorizationStatus = manager.authorizationStatus
+        if authorizationStatus == .authorizedWhenInUse || authorizationStatus == .authorizedAlways {
+            manager.startUpdatingLocation()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let latest = locations.last else { return }
+        DispatchQueue.main.async {
+            self.currentLocation = latest
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location error: \(error.localizedDescription)")
+    }
 }
